@@ -53,8 +53,10 @@ class PersonasController extends Controller
         $personas->save();
     }
     
-    public function destroy($id)
+    public function destroy(Request $request)
     {
         //
+        $personas = Personas::find($request->id);
+        $personas->delete();
     }
 }
